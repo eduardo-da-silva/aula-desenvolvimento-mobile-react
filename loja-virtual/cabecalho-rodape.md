@@ -220,12 +220,7 @@ Da mesma forma, estamos importando o ícone de busca da biblioteca Material Desi
 E, para o rodapé, vamos editar o arquivo `src/componentes/templates/small/SmallFooter.vue`, com o seguinte conteúdo:
 
 ```vue
-<script setup>
-import AccountCircleOutline from 'vue-material-design-icons/AccountCircleOutline.vue';
-import CartOutline from 'vue-material-design-icons/CartOutline.vue';
-import HomeOutline from 'vue-material-design-icons/HomeOutline.vue';
-import Menu from 'vue-material-design-icons/Menu.vue';
-</script>
+<script setup></script>
 <template>
   <div class="icons">
     <RouterLink to="/">
@@ -241,7 +236,7 @@ import Menu from 'vue-material-design-icons/Menu.vue';
       Carrinho
     </RouterLink>
     <RouterLink to="/">
-      <Menu />
+      <i class="mdi mdi-menu" />
       Menu
     </RouterLink>
   </div>
