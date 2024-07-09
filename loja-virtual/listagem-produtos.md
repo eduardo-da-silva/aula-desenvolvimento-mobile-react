@@ -22,7 +22,7 @@ const BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL;
 axios.defaults.baseURL = `${BASE_URL}/api/`;
 ```
 
-Note que estamos configurando a URL base da API FakeStore desenvolvida em Django, como informando no arquivo `.env`. Você pode querer usar outro servidor ou baixar o projeto e rodar localmente. Para isso, você precisará alterar apenas a URL base.
+Note que estamos configurando a URL base da API FakeStore desenvolvida em Django, como informado no arquivo `.env`. Você pode querer usar outro servidor ou baixar o projeto e rodar localmente. Para isso, você precisará alterar apenas a URL base.
 
 Então, vamos editar o arquivo `src/main.js` e adicionar a seguinte linha logo abaixo da linha que importa o `router`:
 
