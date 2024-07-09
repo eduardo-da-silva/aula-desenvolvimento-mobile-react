@@ -55,30 +55,30 @@ Agora que a tela de login está pronta e nas rotas, vamos adicionar um link para
 <template>
   <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
     <RouterLink to="/">
-      <HomeOutline size="25" fillColor="#282828" />
+      <i class="mdi mdi-home-outline" />
       Home
     </RouterLink>
     <RouterLink to="/login">
-      <Account size="25" fillColor="#282828" />
+      <i class="mdi mdi-account" />
       Login
     </RouterLink>
   </div>
   <div class="icons">
     <RouterLink to="/">
-      <HomeOutline size="25" fillColor="#282828" />
+      <i class="mdi mdi-home-outline" />
       Home
     </RouterLink>
     <RouterLink to="/">
-      <AccountCircleOutline size="25" fillColor="#282828" />
+      <i class="mdi mdi-account-circle-outline" />
       Perfil
     </RouterLink>
     <RouterLink to="/">
-      <CartOutline size="25" fillColor="#282828" />
+      <i class="mdi mdi-cart-outline" />
       Carrinho
     </RouterLink>
 
     <div class="hamburger" @click="showMenu = !showMenu">
-      <Menu size="25" fillColor="#282828" />
+      <i class="mdi mdi-menu" />
       Menu
     </div>
   </div>
@@ -93,12 +93,6 @@ Para isso, precisamos fazer uma alteração no bloco `script` e deixá-lo como s
 <script setup>
 import { ref } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
-
-import AccountCircleOutline from 'vue-material-design-icons/AccountCircleOutline.vue';
-import CartOutline from 'vue-material-design-icons/CartOutline.vue';
-import HomeOutline from 'vue-material-design-icons/HomeOutline.vue';
-import Account from 'vue-material-design-icons/Account.vue';
-import Menu from 'vue-material-design-icons/Menu.vue';
 
 const showMenu = ref(false);
 
