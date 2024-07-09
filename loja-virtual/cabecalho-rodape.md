@@ -122,13 +122,11 @@ Da mesma forma, fizemos ajustes na apresentação dos links de navegação, defi
 Para telas médias, vamos fazer ajustes no cabeçalho e rodapé da aplicação. Para isso, vamos editar o arquivo `src/componentes/templates/medium/MediumHeader.vue`, com o seguinte conteúdo:
 
 ```vue
-<script setup>
-import Magnify from 'vue-material-design-icons/Magnify.vue';
-</script>
+<script setup></script>
 
 <template>
   <div class="icons">
-    <Magnify />
+    <i class="mdi mdi-magnify" />
   </div>
 </template>
 
@@ -137,6 +135,7 @@ import Magnify from 'vue-material-design-icons/Magnify.vue';
   display: flex;
   gap: 1rem;
   align-items: center;
+  font-size: 1.7rem;
 }
 </style>
 ```
@@ -146,11 +145,7 @@ Note que estamos importando o ícone de busca da biblioteca Material Design Icon
 Em seguida, vamos editar o arquivo `src/componentes/templates/medium/MediumFooter.vue`, com o seguinte conteúdo:
 
 ```vue
-<script setup>
-import Facebook from 'vue-material-design-icons/Facebook.vue';
-import Twitter from 'vue-material-design-icons/Twitter.vue';
-import Instagram from 'vue-material-design-icons/Instagram.vue';
-</script>
+<script setup></script>
 <template>
   <div class="links">
     <RouterLink to="/">Help</RouterLink>
@@ -158,9 +153,9 @@ import Instagram from 'vue-material-design-icons/Instagram.vue';
     <RouterLink to="/">Privacy & Terms</RouterLink>
   </div>
   <div class="icons">
-    <Facebook size="30" />
-    <Twitter size="30" />
-    <Instagram size="30" />
+    <i class="mdi mdi-facebook" />
+    <i class="mdi mdi-twitter" />
+    <i class="mdi mdi-instagram" />
   </div>
 </template>
 <style scoped>
@@ -183,6 +178,7 @@ import Instagram from 'vue-material-design-icons/Instagram.vue';
   display: flex;
   gap: 4rem;
   align-items: center;
+  font-size: 2.2rem;
 }
 </style>
 ```
@@ -195,14 +191,13 @@ Por fim, vamos fazer ajustes no cabeçalho e rodapé da aplicação para telas p
 
 ```vue
 <script setup>
-import Magnify from 'vue-material-design-icons/Magnify.vue';
 import LogoTitle from '@/components/templates/LogoTitle.vue';
 </script>
 
 <template>
   <logo-title class="pl-0" />
   <div class="icons">
-    <Magnify />
+    <i class="mdi mdi-magnify" />
   </div>
 </template>
 
@@ -215,6 +210,7 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   display: flex;
   gap: 1rem;
   align-items: center;
+  font-size: 1.7rem;
 }
 </style>
 ```
@@ -233,19 +229,19 @@ import Menu from 'vue-material-design-icons/Menu.vue';
 <template>
   <div class="icons">
     <RouterLink to="/">
-      <HomeOutline size="25" fillColor="#282828" />
+      <i class="mdi mdi-home-outline" />
       Home
     </RouterLink>
     <RouterLink to="/">
-      <AccountCircleOutline size="25" fillColor="#282828" />
+      <i class="mdi mdi-account-circle-outline" />
       Perfil
     </RouterLink>
     <RouterLink to="/">
-      <CartOutline size="25" fillColor="#282828" />
+      <i class="mdi mdi-cart-outline" />
       Carrinho
     </RouterLink>
     <RouterLink to="/">
-      <Menu size="25" fillColor="#282828" />
+      <Menu />
       Menu
     </RouterLink>
   </div>
@@ -279,6 +275,7 @@ import Menu from 'vue-material-design-icons/Menu.vue';
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  font-size: 1.7rem;
 }
 
 .icons a {
