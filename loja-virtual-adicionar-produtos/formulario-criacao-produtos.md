@@ -60,6 +60,7 @@ onMounted(async () => {
 });
 </script>
 <template>
+  {% raw %}
   <h1>Adicionar Produto</h1>
   <form class="form" @submit.prevent="save">
     <div class="row-form">
@@ -108,7 +109,7 @@ onMounted(async () => {
     </div>
     <button class="btn-send" type="submit">Adicionar</button>
   </form>
-  {{ product }} - {{ coverUrl }} - {{ previewImage }} - {{ file }}
+  {% endraw %}
 
   <modal-add-category v-if="showModal" @close="showModal = !showModal" />
 </template>
