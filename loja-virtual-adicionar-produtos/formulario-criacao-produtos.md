@@ -23,7 +23,6 @@ const productStore = useProductStore();
 const uploaderStore = useUploaderStore();
 
 const showModal = ref(false);
-const coverUrl = ref('');
 
 const file = ref(null);
 const previewImage = ref('');
