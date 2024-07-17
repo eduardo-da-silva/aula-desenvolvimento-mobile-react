@@ -29,6 +29,29 @@ export default class CategoryService {
 
 Note que criamos dois métodos: `getCategories` e `createCategory`. O método `getCategories` faz uma chamada GET para a URL `/categories/` e retorna as categorias cadastradas. O método `createCategory` faz uma chamada POST para a URL `/categories/` com a categoria a ser cadastrada.
 
+# Camada de serviço para o uploader (envio de imagens)
+
+Precisamos também de um serviço para o upload de imagens para a API. Vamos então criar o arquivo `src/services/uploader.js` com o seguinte conteúdo:
+
+```javascript
+import axios from 'axios';
+
+export default class UploaderService {
+  async uploadImage(image) {
+    const formData = new formData();
+    formData.append('file', image);
+    const response = await axios.post('/media/images/', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  }
+}
+```
+
+Note que inicialmente criamos um objeto da classe formData para registar as informações da imagem. Ainda, adicionamos a imagem associada com o campo `file`, que é o nome do campo esperado pela API de backend. Em seguida, fizemos uma requisição do tipo POST para a API, informando no `header` que o `Content-Type` é `multipart/form-data`: este o tipo esperado pela API para envio de imagens, documentos, etc.
+
 # Camada de serviço para produtos
 
 Nós já temos um serviço para produtos, mas que ainda não tem implementada a criação de produtos. Vamos então adicionar essa funcionalidade. Para isso, edite o arquivo `src/services/product.js` e substitua o conteúdo pelo seguinte:

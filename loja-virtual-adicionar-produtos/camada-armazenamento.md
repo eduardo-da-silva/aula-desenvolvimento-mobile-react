@@ -15,7 +15,7 @@ Vamos criar uma camada de armazenamento para categorias. Para isso crie um arqui
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
-import CategoryService from '@/service/category';
+import CategoryService from '@/services/category';
 const categoryService = new CategoryService();
 
 export const useCategoryStore = defineStore('category', () => {
@@ -43,7 +43,7 @@ Vamos criar uma camada de armazenamento para o uploader de imagens. Para isso cr
 ```javascript
 import { defineStore } from 'pinia';
 
-import UploaderService from '@/service/uploader';
+import UploaderService from '@/services/uploader';
 const uploaderService = new UploaderService();
 
 export const useUploaderStore = defineStore('uploader', () => {
@@ -66,7 +66,7 @@ Nós já temos um serviço para produtos, mas que ainda não tem implementada a 
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
-import ProductService from '@/service/product';
+import ProductService from '@/services/product';
 const productService = new ProductService();
 
 export const useProductStore = defineStore('product', () => {

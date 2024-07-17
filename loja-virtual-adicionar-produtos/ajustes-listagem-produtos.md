@@ -14,8 +14,6 @@ Inicialmente, vamos editar o arquivo `src/components/ProductList.vue` e adiciona
 import { onMounted, watch } from 'vue';
 import { useProductStore } from '@/stores/product';
 
-import HeartOutline from 'vue-material-design-icons/HeartOutline.vue';
-import Star from 'vue-material-design-icons/Star.vue';
 import { formatDescription, formatPrice, formatTitle } from '@/helpers/format';
 
 const props = defineProps(['category_id']);
@@ -42,6 +40,7 @@ onMounted(async () => {
 </script>
 
 <template>
+  {% raw %}
   <div class="product-list">
     <router-link :to="{ name: 'ProductAdd' }">
       <button class="icon ">
@@ -58,7 +57,7 @@ onMounted(async () => {
     >
       <div class="product-img-wrapper">
         <img :src="product.image?.url" alt="product.name" />
-        <heart-outline />
+        <i class="mdi mdi-heart-outline" />
       </div>
       <div class="product-title-price">
         <p>{{ formatTitle(product.title) }}</p>
@@ -67,15 +66,16 @@ onMounted(async () => {
       <div class="product-description-stars">
         <p>{{ formatDescription(product.description) }}</p>
         <div class="stars">
-          <star size="20" />
-          <star size="20" />
-          <star size="20" />
-          <star size="20" />
-          <star size="20" />
+          <i class="mdi mdi-star" />
+          <i class="mdi mdi-star" />
+          <i class="mdi mdi-star" />
+          <i class="mdi mdi-star" />
+          <i class="mdi mdi-star" />
         </div>
       </div>
     </div>
   </div>
+  {% endraw %}
 </template>
 
 <style scoped>
@@ -185,12 +185,6 @@ const router = createRouter({
           path: '/produtos/adicionar',
           name: 'ProductAdd',
           component: () => import('@/views/ProductAdd.vue'),
-        },
-        {
-          path: '/produtos/categoria/:category_id',
-          name: 'Category',
-          component: () => import('@/views/CategoryView.vue'),
-          props: true,
         },
         {
           path: '/login',

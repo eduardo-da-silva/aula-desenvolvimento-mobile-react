@@ -37,7 +37,7 @@ Note que deve ser substituído o valor `APP_ID_QUE_ESTÁ_DISPONÍVEL_NO_DASHBOAR
 
 # Configurando o pinia e api para registro da autenticação
 
-Vamos criar um arquivo para a chamada de API. Para isso, crie um arquivo chamado `src/service/auth.js` e adicione o seguinte código:
+Vamos criar um arquivo para a chamada de API. Para isso, crie um arquivo chamado `src/services/auth.js` e adicione o seguinte código:
 
 ```javascript
 import axios from 'axios';
@@ -62,7 +62,7 @@ Em seguida, vamos criar um _store_ para armazenar o _token_ do usuário. Para is
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
-import AuthService from '@/service/auth';
+import AuthService from '@/services/auth';
 const authService = new AuthService();
 
 export const useAuthStore = defineStore('auth', () => {
@@ -88,6 +88,8 @@ O Passage foi configurado, na etapa anterior para que a URL de redirecionamento 
 
 ```vue
 <script setup>
+import ProductList from '@/components/ProductList.vue';
+
 import { onMounted } from 'vue';
 import { PassageUser } from '@passageidentity/passage-elements/passage-user';
 import { useAuthStore } from '@/stores/auth';
