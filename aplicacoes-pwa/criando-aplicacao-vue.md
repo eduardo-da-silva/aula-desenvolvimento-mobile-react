@@ -25,7 +25,7 @@ O comando anterior irá criar uma aplicação VueJS usando uma ferramenta de sca
 ✔ Add Cypress for both Unit and End-to-End testing? … No
 ✔ Add ESLint for code quality? … Yes
 ✔ Add Prettier for code formatting? … Yes
-
+✔ Add Vue DevTools 7 extension for debugging? (experimental) … Yes
 Scaffolding project in ./<your-project-name>...
 Done.
 ```
